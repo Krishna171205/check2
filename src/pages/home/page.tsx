@@ -218,7 +218,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{
-        backgroundImage: 'url(https://readdy.ai/api/search-image?query=modern%20luxury%20home%20exterior%20with%20large%20windows%20and%20landscaped%20garden%2C%20contemporary%20architecture%2C%20beautiful%20residential%20property%2C%20clean%20lines%2C%20natural%20lighting%2C%20left%20side%20darker%20for%20text%20overlay&width=1920&height=1080&seq=hero1&orientation=landscape)'
+        backgroundImage: 'url(https://image2url.com/images/1758118053238-b322dd25-bf6f-4d67-a6b3-1f02f025ebff.jpg)'
       }}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
