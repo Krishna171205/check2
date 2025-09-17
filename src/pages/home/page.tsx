@@ -517,7 +517,7 @@ For us, it’s not about closing deals—it’s about building relationships tha
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Phone</p>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">(+91) 9811017103</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -526,7 +526,7 @@ For us, it’s not about closing deals—it’s about building relationships tha
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">sarah@mitchellrealty.com</p>
+                    <p className="text-gray-600">rajeevmittal_dlf@hotmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -535,7 +535,7 @@ For us, it’s not about closing deals—it’s about building relationships tha
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Office</p>
-                    <p className="text-gray-600">123 Main Street, Suite 456<br />Downtown, CA 90210</p>
+                    <p className="text-gray-600">123, DLF Qutub Plaza,DLF City-1<br />Gurugram, (Hry) 122002</p>
                   </div>
                 </div>
                 <div className="flex items-center">
