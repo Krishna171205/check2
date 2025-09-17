@@ -769,7 +769,7 @@ For us, it’s not about closing deals—it’s about building relationships tha
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Sarah Mitchell</h3>
+              <h3 className="text-xl font-bold mb-4">Rajeev Mittal</h3>
               <p className="text-gray-400 mb-4">
                 Expert real estate guidance with personalized service for buyers and sellers.
               </p>
@@ -813,21 +813,21 @@ For us, it’s not about closing deals—it’s about building relationships tha
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center">
                   <i className="ri-phone-line mr-2 w-4 h-4 flex items-center justify-center"></i>
-                  (555) 123-4567
+                  (+91)9811017103
                 </li>
                 <li className="flex items-center">
                   <i className="ri-mail-line mr-2 w-4 h-4 flex items-center justify-center"></i>
-                  sarah@mitchellrealty.com
+                  rajeevmittal_dlf@hotmail.com
                 </li>
                 <li className="flex items-center">
                   <i className="ri-map-pin-line mr-2 w-4 h-4 flex items-center justify-center"></i>
-                  123 Main Street<br />Downtown, CA 90210
+                  123, DLF Qutub Plaza,DLF City-1<br />Gurugram, (Hry) 122002
                 </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Sarah Mitchell Realty. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Rajeev Mittal Realty. All rights reserved.</p>
           </div>
         </div>
       </footer>
