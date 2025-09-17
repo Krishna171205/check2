@@ -153,7 +153,16 @@ ${formData.message}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <button onClick={() => navigate('/')} className="text-2xl font-bold text-gray-900 cursor-pointer">
+              <img 
+                src="/image.png"
+                alt="Rajeev Mittal Logo" 
+                className="h-16 w-auto cursor-pointer"
+                onClick={() => navigate('/')}
+              />
+              <button
+                onClick={() => navigate('/')}
+                className="text-1xl font-bold text-gray-800 cursor-pointer"
+              >
                 Rajeev Mittal
               </button>
             </div>
@@ -439,7 +448,8 @@ ${formData.message}
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.</p>
+            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.<br/>Rera Approved 
+-Registration Number GGM/107/2017/1R/140/Ext1/2022/2021</p>
           </div>
         </div>
       </footer>

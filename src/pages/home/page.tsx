@@ -1,6 +1,78 @@
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
+
+// ✅ Import Swiper at the top of your file
+
+const testimonials = [
+  {
+    name: "Mr. & Mrs. Sharma",
+    property: "DLF Magnolias",
+    text: "Buying our dream home in Gurgaon seemed overwhelming at first, but Rajeev made the entire process seamless. His knowledge of the luxury market, attention to detail, and ability to understand exactly what we wanted stood out. He found us a property that checked every box — location, design, and investment value. We couldn’t have asked for a better guide.",
+  },
+  {
+    name: "Dr. Mehta",
+    property: "The Camellias",
+    text: "Rajeev is not just a realtor; he’s a trusted advisor. From the very first meeting, he understood our requirements, respected our time, and showed us only the most relevant properties. His insights into market trends helped us make a smart decision, and today we are proud owners of a home we truly love. Highly recommended for anyone looking for luxury real estate in Gurgaon.",
+  },
+  {
+    name: "Mr. Kapoor",
+    property: "Ambience Caitriona",
+    text: "What impressed us most about Rajeev was his integrity and professionalism. In Gurgaon’s fast-moving luxury real estate market, he gave us the confidence to make the right choice. He handled every detail — negotiations, paperwork, and coordination — so smoothly that the entire journey felt effortless. We are grateful for his guidance.",
+  },
+  {
+    name: "Mrs. Arora",
+    property: "DLF The Grove",
+    text: "Rajeev’s network and expertise are unmatched. He helped us secure an exclusive property that wasn’t even listed on the market. The way he manages client relationships — with discretion, patience, and genuine care — is rare. Thanks to him, we now have a beautiful home in one of Gurgaon’s most sought-after communities.",
+  },
+  {
+    name: "Mr. & Mrs. Khanna",
+    property: "The Crest",
+    text: "As NRIs, we were nervous about investing in Gurgaon real estate from abroad. Rajeev gave us complete peace of mind — from virtual tours to legal formalities, he handled everything with precision. His honest advice and constant updates made us feel fully involved despite the distance. Today, we are proud owners of a luxury residence, all thanks to him.",
+  },
+  {
+    name: "Mr. & Mrs. Bansal",
+    property: "DLF Aralias",
+    text: "Rajeev has a deep understanding of Gurgaon’s luxury market and an incredible ability to match clients with the right home. He showed us options that were perfectly aligned with our taste and lifestyle. His guidance gave us complete confidence, and the property we bought feels like it was meant for us.",
+  },
+  {
+    name: "Mr. Malhotra",
+    property: "M3M Golf Estate",
+    text: "What sets Rajeev apart is his personal touch. He treats every client’s search as if it were his own. We never felt rushed or pressured — instead, we felt heard and supported throughout. The home we purchased is everything we dreamed of, and Rajeev made that possible.",
+  },
+  {
+    name: "Mrs. Singh",
+    property: "DLF Magnolias",
+    text: "Professionalism at its best. Rajeev is thorough, transparent, and truly invested in his clients’ happiness. He guided us through every step, from shortlisting to negotiation, and secured us a wonderful property at the right value. We always felt we were in safe hands.",
+  },
+  {
+    name: "Mr. & Mrs. Gupta",
+    property: "The Camellias",
+    text: "For us, buying a luxury home was not just a financial decision but an emotional one. Rajeev respected that completely. His patience, market expertise, and genuine care ensured we found a place that feels like home the moment we walk in. We couldn’t be more thankful.",
+  },
+  {
+    name: "Mr. Khurana",
+    property: "Ambience Caitriona",
+    text: "Rajeev’s reputation in the Gurgaon luxury segment is well deserved. His professionalism, discretion, and ability to deliver beyond expectations make him a class apart. He helped us acquire a property that fit our lifestyle perfectly, and the entire process felt effortless because of his expertise.",
+  },
+];
+
+// export default function TestimonialsSection() {
+//   return (
+    
+//   );
+// }
+
 
 interface Property {
   id: number;
@@ -39,6 +111,29 @@ const Home = () => {
   const [isConsultationSubmitting, setIsConsultationSubmitting] = useState(false);
   const [consultationSubmitStatus, setConsultationSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [loadingProperties, setLoadingProperties] = useState(true);
+
+  // ✅ Reusable Counter Component
+const StatsCounters = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+
+  return (
+    <div ref={ref} className="grid grid-cols-2 gap-8 mb-10">
+      <div className="text-center">
+        <div className="text-4xl font-bold text-blue-600 mb-3">
+          {inView && <CountUp end={450} duration={4} />}+
+        </div>
+        <div className="text-lg text-gray-700">Properties Sold</div>
+      </div>
+      <div className="text-center">
+        <div className="text-4xl font-bold text-blue-600 mb-3">
+          ₹{inView && <CountUp end={500} duration={4} />}Cr+
+        </div>
+        <div className="text-lg text-gray-700">Sales Volume</div>
+      </div>
+    </div>
+  );
+};
+
 
   useEffect(() => {
     loadProperties();
@@ -196,7 +291,18 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Rajeev Mittal</h1>
+              <img 
+                src="/image.png"
+                alt="Rajeev Mittal Logo" 
+                className="h-16 w-auto cursor-pointer"
+                onClick={() => navigate('/')}
+              />
+              <button
+                onClick={() => navigate('/')}
+                className="text-1xl font-bold text-gray-800 cursor-pointer"
+              >
+                Rajeev Mittal
+              </button>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -257,16 +363,8 @@ Our expertise lies in premium and ultra-luxury properties—from iconic residenc
 
 For us, it’s not about closing deals—it’s about building relationships that last a lifetime.
               </p>
-              <div className="grid grid-cols-2 gap-8 mb-10">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-3">500+</div>
-                  <div className="text-lg text-gray-700">Properties Sold</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-3">₹500Cr+</div>
-                  <div className="text-lg text-gray-700">Sales Volume</div>
-                </div>
-              </div>
+            {/* ✅ Animated Counters */}
+              <StatsCounters />
               <button 
                 onClick={() => setShowConsultationForm(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold whitespace-nowrap cursor-pointer"
@@ -424,81 +522,43 @@ For us, it’s not about closing deals—it’s about building relationships tha
 
       {/* Testimonials Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
-            <p className="text-xl text-gray-600">What my clients say about working with me</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <div className="flex items-center mb-4">
-                {/* <img 
-                  alt="Michael Chen" 
-                  className="w-12 h-12 rounded-full object-cover mr-4 object-top" 
-                  src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20confident%20Asian%20businessman%20in%20his%20thirties%20wearing%20dark%20business%20suit%20friendly%20smile%20modern%20office%20background%20corporate%20portrait%20style&width=80&height=80&seq=testimonial1&orientation=squarish"
-                /> */}
-                <div>
-                  <h4 className="font-semibold text-gray-900">Michael Chen</h4>
-                  <p className="text-gray-600 text-sm">First-time Buyer</p>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <i key={i} className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
-                ))}
-              </div>
-              <p className="text-gray-700 italic">
-                "Sarah made my first home purchase seamless. Her expertise and patience throughout the process were invaluable. I couldn't have asked for a better agent!"
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <div className="flex items-center mb-4">
-                {/* <img 
-                  alt="Emma Rodriguez" 
-                  className="w-12 h-12 rounded-full object-cover mr-4 object-top" 
-                  src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20confident%20Latina%20businesswoman%20in%20her%20forties%20wearing%20blazer%20warm%20smile%20modern%20office%20setting%20corporate%20portrait%20photography&width=80&height=80&seq=testimonial2&orientation=squarish"
-                /> */}
-                <div>
-                  <h4 className="font-semibold text-gray-900">Emma Rodriguez</h4>
-                  <p className="text-gray-600 text-sm">Property Investor</p>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <i key={i} className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
-                ))}
-              </div>
-              <p className="text-gray-700 italic">
-                "Working with Sarah has been a game-changer for my investment portfolio. She has an incredible eye for profitable properties and market trends."
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <div className="flex items-center mb-4">
-                {/* <img 
-                  alt="David Thompson" 
-                  className="w-12 h-12 rounded-full object-cover mr-4 object-top" 
-                  src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20distinguished%20Caucasian%20businessman%20in%20his%20fifties%20wearing%20navy%20suit%20confident%20expression%20upscale%20office%20background%20executive%20portrait%20style&width=80&height=80&seq=testimonial3&orientation=squarish"
-                /> */}
-                <div>
-                  <h4 className="font-semibold text-gray-900">David Thompson</h4>
-                  <p className="text-gray-600 text-sm">Luxury Home Seller</p>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <i key={i} className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
-                ))}
-              </div>
-              <p className="text-gray-700 italic">
-                "Sarah sold our family home for 15% above asking price in just two weeks. Her marketing strategy and negotiation skills are outstanding."
-              </p>
-            </div>
-            
-          </div>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+          <p className="text-xl text-gray-600">What my clients say about working with me</p>
         </div>
-      </section>
+
+        <div className='Relative'>
+          <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              navigation
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              breakpoints={{
+                640: { slidesPerView: 1 },  // mobile
+                768: { slidesPerView: 2 },  // tablet
+                1024: { slidesPerView: 3 }, // desktop
+              }}
+              className="w-full overflow-visible"
+        >
+          {testimonials.map((t, i) => (
+            <SwiperSlide key={i} className='h-full flex'>
+              <div className="bg-gray-50 p-8 rounded-lg shadow hover:shadow-lg transition-shadow h-full flex flex-col">
+                <div className="mb-4">
+                  <h4 className="font-semibold text-gray-900">{t.name}</h4>
+                  <p className="text-gray-600 text-sm">{t.property}</p>
+                </div>
+                <p className="text-gray-700 italic">"{t.text}"</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        </div>  
+        
+      </div>
+    </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
@@ -827,7 +887,8 @@ For us, it’s not about closing deals—it’s about building relationships tha
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Rajeev Mittal Realty. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Rajeev Mittal Realty. All rights reserved.<br/>Rera Approved 
+-Registration Number GGM/107/2017/1R/140/Ext1/2022/2021</p>
           </div>
         </div>
       </footer>

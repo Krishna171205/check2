@@ -91,30 +91,34 @@ const Properties = () => {
   ].sort();
 
   const filteredProperties = properties.filter((property) => {
-    if (filterType !== 'all' && property.type.toLowerCase() !== filterType.toLowerCase()) {
-      return false;
-    }
+  if (filterType !== 'all' && property.type.toLowerCase() !== filterType.toLowerCase()) {
+    return false;
+  }
 
-    if (filterArea !== 'all' && property.area && property.area.toLowerCase() !== filterArea.toLowerCase()) {
-      return false;
-    }
+  if (filterArea !== 'all' && property.area && property.area.toLowerCase() !== filterArea.toLowerCase()) {
+    return false;
+  }
 
-    if (priceRange !== 'all') {
-      const price = property.is_rental ? property.price * 12 : property.price;
-      switch (priceRange) {
-        case 'under_1m':
-          return price < 10_000_000;
-        case '1m_3m':
-          return price >= 10_000_000 && price <= 30_000_000;
-        case 'over_3m':
-          return price > 30_000_000;
-        default:
-          return true;
-      }
-    }
+  if (priceRange !== 'all') {
+    const price = property.is_rental ? property.price * 12 : property.price;
 
-    return true;
-  });
+    switch (priceRange) {
+      case 'under_1m':
+        return price < 10_000_000;
+      case '1m_5m':
+        return price >= 10_000_000 && price <= 50_000_000;
+      case '5m_10m':
+        return price > 50_000_000 && price <= 100_000_000;
+      case 'over_10m':
+        return price > 100_000_000;
+      default:
+        return true;
+    }
+  }
+
+  return true;
+});
+
 
   const sortedProperties = [...filteredProperties].sort((a, b) => {
     const aPrice = a.is_rental ? a.price * 12 : a.price;
@@ -147,10 +151,16 @@ const Properties = () => {
       <nav className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
+           <div className="flex items-center">
+              <img 
+                src="/image.png"
+                alt="Rajeev Mittal Logo" 
+                className="h-16 w-auto cursor-pointer"
+                onClick={() => navigate('/')}
+              />
               <button
                 onClick={() => navigate('/')}
-                className="text-2xl font-bold text-gray-900 cursor-pointer"
+                className="text-1xl font-bold text-gray-800 cursor-pointer"
               >
                 Rajeev Mittal
               </button>
@@ -264,10 +274,11 @@ const Properties = () => {
                 onChange={(e) => setPriceRange(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-8"
               >
-                <option value="all">All Prices</option>
-                <option value="under_1m">Under ₹1 Crore</option>
-                <option value="1m_3m">₹1 Crore - ₹3 Crore</option>
-                <option value="over_3m">Over ₹3 Crore</option>
+                <option value="all">All price Range</option>
+                <option value="under_1m">0-₹1 Crore</option>
+                <option value="1m_5m">₹1 Crore-₹5 Crore</option>
+                <option value="5m_10m">₹5 Crore - ₹10 Crore</option>
+                <option value="over_10m">Over ₹10 Crore</option>
               </select>
             </div>
             <div>
@@ -463,7 +474,8 @@ const Properties = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.</p>
+            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.<br/>Rera Approved 
+-Registration Number GGM/107/2017/1R/140/Ext1/2022/2021</p>
           </div>
         </div>
       </footer>

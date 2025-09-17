@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Move swiper arrows away from testimonials */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #2563eb;
+    /* Tailwind blue-600 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: -200px;
+    /* Push right arrow outward */
+}
+
+.swiper-button-prev {
+    left: -400px;
+    /* Push left arrow outward */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #1d4ed8;
+    /* Tailwind blue-700 */
+    transform: translateY(-50%) scale(1.2);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
