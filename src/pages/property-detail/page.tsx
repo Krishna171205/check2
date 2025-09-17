@@ -64,47 +64,44 @@ const PropertyDetail = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const formDataToSend = new URLSearchParams();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('property', property?.title || '');
+  const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-      const response = await fetch('https://readdy.ai/api/form/d30trnuld3g0jopqalf0', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formDataToSend
-      });
+  try {
+    const subject = `Property Inquiry: ${property?.title}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
 
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-        setTimeout(() => {
-          setShowContactForm(false);
-          setSubmitStatus('idle');
-        }, 3000);
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+Message:
+${formData.message}
+    `;
+
+    const mailtoLink = `mailto:rajeevmittal_dlf@hotmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open default mail client
+    window.location.href = mailtoLink;
+
+    // Simulate success for UI
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+
+    setTimeout(() => {
+      setShowContactForm(false);
+      setSubmitStatus('idle');
+    }, 3000);
+  } catch (err) {
+    console.error(err);
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const formatPrice = (price: number, isRental: boolean = false) => {
     if (isRental) {
@@ -157,7 +154,7 @@ const PropertyDetail = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <button onClick={() => navigate('/')} className="text-2xl font-bold text-gray-900 cursor-pointer">
-                Sarah Mitchell
+                Rajeev Mittal
               </button>
             </div>
             <div className="hidden md:block">
@@ -170,7 +167,7 @@ const PropertyDetail = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer">
+              <a href="https://wa.me/9811017103" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer">
                 <i className="ri-whatsapp-line text-white w-4 h-4 flex items-center justify-center"></i>
               </a>
             </div>
@@ -239,30 +236,30 @@ const PropertyDetail = () => {
             <div className="bg-gray-50 p-6 rounded-lg sticky top-8">
               <div className="text-center mb-6">
                 <img 
-                  alt="Sarah Mitchell" 
+                  alt="Rajeev Mittal" 
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover object-top" 
-                  src="https://readdy.ai/api/search-image?query=professional%20real%20estate%20agent%20Sarah%20Mitchell%2C%20confident%20businesswoman%20in%20elegant%20blazer%2C%20warm%20smile%2C%20holding%20house%20keys%2C%20modern%20office%20setting%20with%20property%20listings%20in%20background%2C%20natural%20lighting&width=80&height=80&seq=agent1&orientation=squarish"
+                  src="https://image2url.com/images/1758081839443-f1caa703-d629-4030-be4d-15dc4509a6cd.jpg"
                 />
-                <h3 className="text-xl font-semibold text-gray-900">Sarah Mitchell</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Rajeev Mittal</h3>
                 <p className="text-gray-600">Licensed Real Estate Agent</p>
-                <div className="flex justify-center space-x-2 mt-2">
+                {/* <div className="flex justify-center space-x-2 mt-2">
                   <i className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
                   <i className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
                   <i className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
                   <i className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
                   <i className="ri-star-fill text-yellow-400 w-4 h-4 flex items-center justify-center"></i>
                   <span className="text-sm text-gray-600 ml-2">5.0 (245 reviews)</span>
-                </div>
+                </div> */}
               </div>
 
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600">Phone:</span>
-                  <a href="tel:+15551234567" className="text-blue-600 hover:text-blue-700 cursor-pointer">(555) 123-4567</a>
+                  <a href="tel:+919811017103" className="text-blue-600 hover:text-blue-700 cursor-pointer">(+91)9811017103</a>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600">Email:</span>
-                  <a href="mailto:sarah@mitchellrealty.com" className="text-blue-600 hover:text-blue-700 cursor-pointer text-sm">sarah@mitchellrealty.com</a>
+                  <a href="mailto:rajeevmittal_dlf@hotmail.com" className="text-blue-600 hover:text-blue-700 cursor-pointer text-sm">rajeevmittal_dlf@hotmail.com</a>
                 </div>
               </div>
 
@@ -274,7 +271,7 @@ const PropertyDetail = () => {
                   Contact About This Property
                 </button>
                 <a 
-                  href={`https://wa.me/15551234567?text=Hi Sarah, I'm interested in the property: ${property.title}`}
+                  href={`https://wa.me/9811017103?text=Hello, I'm interested in the property: ${property.title}`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold whitespace-nowrap cursor-pointer flex items-center justify-center"
@@ -388,20 +385,37 @@ const PropertyDetail = () => {
               <p className="text-gray-400 mb-6">
                 Your trusted real estate professional dedicated to helping you achieve your property goals with personalized service and expert market knowledge.
               </p>
-              <div className="flex space-x-4">
-                <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-whatsapp-line w-5 h-5 flex items-center justify-center"></i>
-                </a>
-                <div className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-linkedin-fill w-5 h-5 flex items-center justify-center"></i>
-                </div>
-                <div className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-facebook-fill w-5 h-5 flex items-center justify-center"></i>
-                </div>
-                <div className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-instagram-fill w-5 h-5 flex items-center justify-center"></i>
-                </div>
-              </div>
+               <div className="flex space-x-4">
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/9811017103"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <i className="ri-whatsapp-line w-5 h-5 flex items-center justify-center"></i>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/rajeev-mittal-47b51a33?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <i className="ri-linkedin-fill w-5 h-5 flex items-center justify-center"></i>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/rajeev_mittal_6?igsh=ZnFqMTd1aXB0aXo1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <i className="ri-instagram-fill w-5 h-5 flex items-center justify-center"></i>
+              </a>
+            </div>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -411,7 +425,6 @@ const PropertyDetail = () => {
                 <li><a href="/#services" className="text-gray-400 hover:text-white cursor-pointer">Services</a></li>
                 <li><button onClick={() => navigate('/properties')} className="text-gray-400 hover:text-white cursor-pointer">Properties</button></li>
                 <li><a href="/#contact" className="text-gray-400 hover:text-white cursor-pointer">Contact</a></li>
-                <li><a href="https://readdy.ai/?origin=logo" className="text-gray-400 hover:text-white cursor-pointer">Made with Readdy</a></li>
               </ul>
             </div>
             <div>
@@ -426,7 +439,7 @@ const PropertyDetail = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 Sarah Mitchell Real Estate. All rights reserved.</p>
+            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.</p>
           </div>
         </div>
       </footer>

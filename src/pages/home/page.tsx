@@ -196,7 +196,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Sarah Mitchell</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Rajeev Mittal</h1>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -208,7 +208,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer">
+              <a href="https://wa.me/9811017103" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer">
                 <i className="ri-whatsapp-line text-white w-4 h-4 flex items-center justify-center"></i>
               </a>
             </div>
@@ -247,9 +247,15 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-5xl font-bold text-gray-900 mb-8">Meet Sarah Mitchell</h2>
+              <h2 className="text-5xl font-bold text-gray-900 mb-8">Meet Rajeev Mittal</h2>
               <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                With over 12 years of experience in luxury real estate, I've helped hundreds of families find their perfect homes and investors build successful portfolios. My commitment to excellence and personalized service has made me one of the top-performing agents in the region.
+               With over 30 years in Gurgaon’s real estate, we’ve helped families, corporates, and investors find dream homes and high-return opportunities since 1990.
+
+We’re trusted partners of top developers like DLF, EMAAR, TATA, Vatika, Unitech, IREO, Homestead, and more, and proudly serve leading corporates including IBM, Nestlé, Coca-Cola, American Express, Airtel, and Max Life.
+
+Our expertise lies in premium and ultra-luxury properties—from iconic residences like DLF Camellias, Magnolias, Aralias, Central Park, The Crest, and World Spa to exclusive high-end rentals for diplomats and expats.
+
+For us, it’s not about closing deals—it’s about building relationships that last a lifetime.
               </p>
               <div className="grid grid-cols-2 gap-8 mb-10">
                 <div className="text-center">
@@ -257,7 +263,7 @@ const Home = () => {
                   <div className="text-lg text-gray-700">Properties Sold</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-3">$250M+</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-3">₹500Cr+</div>
                   <div className="text-lg text-gray-700">Sales Volume</div>
                 </div>
               </div>
@@ -270,9 +276,9 @@ const Home = () => {
             </div>
             <div className="relative">
               <img 
-                alt="Sarah Mitchell" 
+                alt="Rajeev Mittal" 
                 className="rounded-lg shadow-lg object-cover w-full h-[500px] object-top" 
-                src="https://readdy.ai/api/search-image?query=professional%20real%20estate%20agent%20Sarah%20Mitchell%2C%20confident%20businesswoman%20in%20elegant%20blazer%2C%20warm%20smile%2C%20holding%20house%20keys%2C%20modern%20office%20setting%20with%20property%20listings%20in%20background%2C%20natural%20lighting&width=600&height=700&seq=about1&orientation=portrait"
+                src="https://image2url.com/images/1758081839443-f1caa703-d629-4030-be4d-15dc4509a6cd.jpg"
               />
             </div>
           </div>
@@ -426,11 +432,11 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-8 rounded-lg">
               <div className="flex items-center mb-4">
-                <img 
+                {/* <img 
                   alt="Michael Chen" 
                   className="w-12 h-12 rounded-full object-cover mr-4 object-top" 
                   src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20confident%20Asian%20businessman%20in%20his%20thirties%20wearing%20dark%20business%20suit%20friendly%20smile%20modern%20office%20background%20corporate%20portrait%20style&width=80&height=80&seq=testimonial1&orientation=squarish"
-                />
+                /> */}
                 <div>
                   <h4 className="font-semibold text-gray-900">Michael Chen</h4>
                   <p className="text-gray-600 text-sm">First-time Buyer</p>
@@ -448,11 +454,11 @@ const Home = () => {
 
             <div className="bg-gray-50 p-8 rounded-lg">
               <div className="flex items-center mb-4">
-                <img 
+                {/* <img 
                   alt="Emma Rodriguez" 
                   className="w-12 h-12 rounded-full object-cover mr-4 object-top" 
                   src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20confident%20Latina%20businesswoman%20in%20her%20forties%20wearing%20blazer%20warm%20smile%20modern%20office%20setting%20corporate%20portrait%20photography&width=80&height=80&seq=testimonial2&orientation=squarish"
-                />
+                /> */}
                 <div>
                   <h4 className="font-semibold text-gray-900">Emma Rodriguez</h4>
                   <p className="text-gray-600 text-sm">Property Investor</p>
@@ -470,11 +476,11 @@ const Home = () => {
 
             <div className="bg-gray-50 p-8 rounded-lg">
               <div className="flex items-center mb-4">
-                <img 
+                {/* <img 
                   alt="David Thompson" 
                   className="w-12 h-12 rounded-full object-cover mr-4 object-top" 
                   src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20distinguished%20Caucasian%20businessman%20in%20his%20fifties%20wearing%20navy%20suit%20confident%20expression%20upscale%20office%20background%20executive%20portrait%20style&width=80&height=80&seq=testimonial3&orientation=squarish"
-                />
+                /> */}
                 <div>
                   <h4 className="font-semibold text-gray-900">David Thompson</h4>
                   <p className="text-gray-600 text-sm">Luxury Home Seller</p>
@@ -489,6 +495,7 @@ const Home = () => {
                 "Sarah sold our family home for 15% above asking price in just two weeks. Her marketing strategy and negotiation skills are outstanding."
               </p>
             </div>
+            
           </div>
         </div>
       </section>
@@ -767,16 +774,16 @@ const Home = () => {
                 Expert real estate guidance with personalized service for buyers and sellers.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white cursor-pointer">
+                {/* <a href="#" className="text-gray-400 hover:text-white cursor-pointer">
                   <i className="ri-facebook-fill w-5 h-5 flex items-center justify-center"></i>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white cursor-pointer">
+                </a> */}
+                <a href="https://www.instagram.com/rajeev_mittal_6?igsh=ZnFqMTd1aXB0aXo1" className="text-gray-400 hover:text-white cursor-pointer">
                   <i className="ri-instagram-line w-5 h-5 flex items-center justify-center"></i>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white cursor-pointer">
+                <a href="https://www.linkedin.com/in/rajeev-mittal-47b51a33?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-gray-400 hover:text-white cursor-pointer">
                   <i className="ri-linkedin-fill w-5 h-5 flex items-center justify-center"></i>
                 </a>
-                <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white cursor-pointer">
+                <a href="https://wa.me/9811017103" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white cursor-pointer">
                   <i className="ri-whatsapp-line w-5 h-5 flex items-center justify-center"></i>
                 </a>
               </div>

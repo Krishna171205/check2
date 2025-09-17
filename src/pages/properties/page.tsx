@@ -152,7 +152,7 @@ const Properties = () => {
                 onClick={() => navigate('/')}
                 className="text-2xl font-bold text-gray-900 cursor-pointer"
               >
-                Sarah Mitchell
+                Rajeev Mittal
               </button>
             </div>
             <div className="hidden md:block">
@@ -191,7 +191,7 @@ const Properties = () => {
             </div>
             <div className="flex items-center space-x-4">
               <a
-                href="https://wa.me/15551234567"
+                href="https://wa.me/9811017103"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer"
@@ -380,24 +380,36 @@ const Properties = () => {
                 personalized service and expert market knowledge.
               </p>
               <div className="flex space-x-4">
-                <a
-                  href="https://wa.me/15551234567"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer"
-                >
-                  <i className="ri-whatsapp-line w-5 h-5 flex items-center justify-center"></i>
-                </a>
-                <div className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-linkedin-fill w-5 h-5 flex items-center justify-center"></i>
-                </div>
-                <div className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-facebook-fill w-5 h-5 flex items-center justify-center"></i>
-                </div>
-                <div className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center cursor-pointer">
-                  <i className="ri-instagram-fill w-5 h-5 flex items-center justify-center"></i>
-                </div>
-              </div>
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/9811017103"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <i className="ri-whatsapp-line w-5 h-5 flex items-center justify-center"></i>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/rajeev-mittal-47b51a33?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <i className="ri-linkedin-fill w-5 h-5 flex items-center justify-center"></i>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/rajeev_mittal_6?igsh=ZnFqMTd1aXB0aXo1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center cursor-pointer"
+              >
+                <i className="ri-instagram-fill w-5 h-5 flex items-center justify-center"></i>
+              </a>
+            </div>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -427,11 +439,6 @@ const Properties = () => {
                     Contact
                   </a>
                 </li>
-                <li>
-                  <a href="https://readdy.ai/?origin=logo" className="text-gray-400 hover:text-white cursor-pointer">
-                    Made with Readdy
-                  </a>
-                </li>
               </ul>
             </div>
             <div>
@@ -456,7 +463,7 @@ const Properties = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 Sarah Mitchell Real Estate. All rights reserved.</p>
+            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.</p>
           </div>
         </div>
       </footer>
