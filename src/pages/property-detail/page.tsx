@@ -448,7 +448,7 @@ ${formData.message}
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 Rajeev Mittal Real Estate. All rights reserved.<br/>Rera Approved 
+            <p>RAJEEV MITTAL ESTATES PVT.LTD. All rights reserved.<br/>Rera Approved 
 -Registration Number GGM/107/2017/1R/140/Ext1/2022/2021</p>
           </div>
         </div>
